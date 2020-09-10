@@ -43,10 +43,12 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/view/index.html');
 });
 
+//route accessible ken ll admin (utilisateur authentifier)
 app.get('/protected', authenticateJWT, (req, res) => {
   res.sendFile(__dirname + '/view/protected.html');
 });
 
+//route accessible ll les condidat (utilisateur non authentifie)
 app.get('/public', (req, res) => {
   res.sendFile(__dirname + '/view/public.html');
 });
